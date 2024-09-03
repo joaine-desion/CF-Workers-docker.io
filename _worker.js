@@ -1,7 +1,18 @@
+/**
+ * Welcome to Cloudflare Workers! This is your first worker.
+ *
+ * - Run "npm run dev" in your terminal to start a development server
+ * - Open a browser tab at http://localhost:8787/ to see your worker in action
+ * - Run "npm run deploy" to publish your worker
+ *
+ * Learn more at https://developers.cloudflare.com/workers/
+ */
+
+
 // _worker.js
 
 // Docker镜像仓库主机地址
-let hub_host = 'registry-1.docker.io';
+let hub_host = 'hub.docker.com';
 // Docker认证服务器地址
 const auth_url = 'https://auth.docker.io';
 // 自定义的工作服务器地址
@@ -23,7 +34,7 @@ function routeByHosts(host) {
 		"nvcr": "nvcr.io",
 		
 		// 测试环境
-		"test": "registry-1.docker.io",
+		"test": "hub.docker.com",
 	};
 
 	if (host in routes) return [ routes[host], false ];
